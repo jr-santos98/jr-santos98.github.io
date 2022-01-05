@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Minikube - Tag - Junior Santos</title>
+        <link>https://jr-santos98.github.io/tags/minikube/</link>
+        <description>Minikube - Tag - Junior Santos</description>
+        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
+            <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 11 Nov 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jr-santos98.github.io/tags/minikube/" rel="self" type="application/rss+xml" /><item>
+    <title>Hello Minikube para ppc64le</title>
+    <link>https://jr-santos98.github.io/hello-minikube/</link>
+    <pubDate>Wed, 11 Nov 2020 00:00:00 &#43;0000</pubDate>
+    <author>Autor</author>
+    <guid>https://jr-santos98.github.io/hello-minikube/</guid>
+    <description><![CDATA[<p>Este tutorial mostra como criar um cluster para processadores da arquitetura Power (ppc64/ppc64le) utilizando o Minikube.</p>]]></description>
+</item></channel>
+</rss>

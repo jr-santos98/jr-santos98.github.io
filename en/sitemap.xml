@@ -2,8 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://jr-santos98.github.io/en/about/</loc><lastmod>2021-12-18T16:12:20-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://jr-santos98.github.io/en/categories/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/about/</loc><lastmod>2021-12-18T16:12:20-03:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://jr-santos98.github.io/en/categories/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/categories/"
@@ -12,7 +12,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/categories/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/review-power-architecture/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/review-power-architecture/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/review-power-architecture/"
@@ -21,7 +21,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/review-power-architecture/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/"
@@ -30,7 +30,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/posts/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/posts/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/posts/"
@@ -39,7 +39,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/posts/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/tags/power-systems/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/tags/power-systems/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/tags/power-systems/"
@@ -48,7 +48,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/tags/power-systems/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/categories/power-systems/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/categories/power-systems/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/categories/power-systems/"
@@ -57,7 +57,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/categories/power-systems/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/tags/power10/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/tags/power10/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/tags/power10/"
@@ -66,7 +66,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/tags/power10/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/tags/power8/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/tags/power8/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/tags/power8/"
@@ -75,7 +75,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/tags/power8/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/tags/power9/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/tags/power9/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/tags/power9/"
@@ -84,7 +84,7 @@
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/tags/power9/"
                     /></url><url>
-            <loc>https://jr-santos98.github.io/en/tags/</loc><lastmod>2021-12-19T21:49:32-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://jr-santos98.github.io/en/tags/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="pt-br"
                         href="https://jr-santos98.github.io/tags/"
@@ -92,4 +92,41 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://jr-santos98.github.io/en/tags/"
-                    /></url></urlset>
+                    /></url><url>
+            <loc>https://jr-santos98.github.io/en/hello-minikube/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="pt-br"
+                        href="https://jr-santos98.github.io/hello-minikube/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://jr-santos98.github.io/en/hello-minikube/"
+                    /></url><url>
+            <loc>https://jr-santos98.github.io/en/tags/kubernetes/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="pt-br"
+                        href="https://jr-santos98.github.io/tags/kubernetes/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://jr-santos98.github.io/en/tags/kubernetes/"
+                    /></url><url>
+            <loc>https://jr-santos98.github.io/en/tags/minikube/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="pt-br"
+                        href="https://jr-santos98.github.io/tags/minikube/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://jr-santos98.github.io/en/tags/minikube/"
+                    /></url><url>
+            <loc>https://jr-santos98.github.io/en/tags/tutorial/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="pt-br"
+                        href="https://jr-santos98.github.io/tags/tutorial/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://jr-santos98.github.io/en/tags/tutorial/"
+                    /></url><url>
+            <loc>https://jr-santos98.github.io/en/categories/tutorials/</loc><lastmod>2022-01-04T23:12:36-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>

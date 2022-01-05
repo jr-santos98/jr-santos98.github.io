@@ -11,5 +11,12 @@
     <author>Autor</author>
     <guid>https://jr-santos98.github.io/review-power-architecture/</guid>
     <description><![CDATA[<p>Este post faz uma revisão sobre os processadores que compoêm o IBM Power Systems.</p>]]></description>
+</item><item>
+    <title>Hello Minikube para ppc64le</title>
+    <link>https://jr-santos98.github.io/hello-minikube/</link>
+    <pubDate>Wed, 11 Nov 2020 00:00:00 &#43;0000</pubDate>
+    <author>Autor</author>
+    <guid>https://jr-santos98.github.io/hello-minikube/</guid>
+    <description><![CDATA[<p>Este tutorial mostra como criar um cluster para processadores da arquitetura Power (ppc64/ppc64le) utilizando o Minikube.</p>]]></description>
 </item></channel>
 </rss>
