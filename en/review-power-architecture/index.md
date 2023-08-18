@@ -4,8 +4,9 @@
 This post reviews the processors that make up IBM Power Systems.
 
 <!--more-->
+![Logo - Power systems](blog-architecture-power.png)
 
-# Introduction
+## Introduction
 
 In a comparison between IBM processors (Power architecture) and Intel/AMD processors (x86 architecture),
 it can be said that the best options between them will depend on their use.

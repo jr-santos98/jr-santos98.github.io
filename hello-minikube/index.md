@@ -5,6 +5,8 @@ Este tutorial mostra como criar um cluster para processadores da arquitetura Pow
 
 <!--more-->
 
+![Logo of minikube](hello_minikube.png)
+
 O tutorial foi realizado no Ubuntu Server 20.04 LTS (ppc64le), o pacote utilizado foi baixado
 utilizando o repositório de arquivos do [OpenPower Lab @ Unicamp](https://openpower.ic.unicamp.br/project/power-repository/).
 

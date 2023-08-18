@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Um comparativo entre implementações de RISC-V - Junior Santos</title><meta name="Description" content="Uma comparação entre as implementações para a ISA RISC-V."><meta property="og:title" content="Um comparativo entre implementações de RISC-V" />
+<meta property="og:description" content="Uma comparação entre as implementações para a ISA RISC-V." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jr-santos98.github.io/comparative-riscv/" /><meta property="og:image" content="https://jr-santos98.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-08-18T20:04:34-03:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jr-santos98.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Um comparativo entre implementações de RISC-V"/>
+<meta name="twitter:description" content="Uma comparação entre as implementações para a ISA RISC-V."/>
+<meta name="application-name" content="Junior Santos">
+<meta name="apple-mobile-web-app-title" content="Junior Santos"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jr-santos98.github.io/comparative-riscv/" /><link rel="prev" href="https://jr-santos98.github.io/review-power-architecture/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Um comparativo entre implementações de RISC-V",
+        "inLanguage": "pt-br",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jr-santos98.github.io\/comparative-riscv\/"
+        },"image": ["https:\/\/jr-santos98.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "RISCV, Implementação, Comparação","wordcount":  2716 ,
+        "url": "https:\/\/jr-santos98.github.io\/comparative-riscv\/","datePublished": "2023-06-26T00:00:00+00:00","dateModified": "2023-08-18T20:04:34-03:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Junior Santos","logo": "https:\/\/jr-santos98.github.io\/img\/avatar.jpg"},"author": {
+                "@type": "Person",
+                "name": "Junior Santos"
+            },"description": "Uma comparação entre as implementações para a ISA RISC-V."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Junior Santos"><span class="header-title-pre"><i class='fas fa-terminal'></i></span> Junior Santos</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categorias </a><a class="menu-item" href="/about/"> Sobre Mim </a><a class="menu-item" href="https://github.com/jr-santos98" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Selecione o idioma">Português<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/comparative-riscv/" selected>Português</option><option value="/en/comparative-riscv/">English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Pesquisar títulos ou conteúdos ..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Pesquisa">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Limpar">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Trocar tema">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Junior Santos"><span class="header-title-pre"><i class='fas fa-terminal'></i></span> Junior Santos</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Pesquisar títulos ou conteúdos ..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Pesquisa">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Limpar">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancelar
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categorias</a><a class="menu-item" href="/about/" title="">Sobre Mim</a><a class="menu-item" href="https://github.com/jr-santos98" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Trocar tema">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Selecione o idioma">Português<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/comparative-riscv/" selected>Português</option><option value="/en/comparative-riscv/">English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Conteúdos</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Um comparativo entre implementações de RISC-V</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://jr-santos98.github.io/about/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Junior Santos</a></span>&nbsp;<span class="post-category">incluido em <a href="/categories/riscv/"><i class="far fa-folder fa-fw"></i>RISCV</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-06-26">2023-06-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2716 palavras&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;13 minutos&nbsp;<span id="/comparative-riscv/" class="leancloud_visitors" data-flag-title="Um comparativo entre implementações de RISC-V">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;visualizações
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Conteúdos</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#implementações">Implementações</a>
+      <ul>
+        <li><a href="#rocket-chiphttpsgithubcomchipsalliancerocket-chip">Rocket Chip<a href="https://github.com/chipsalliance/rocket-chip">*</a></a>
+          <ul>
+            <li><a href="#pipeline">Pipeline</a></li>
+          </ul>
+        </li>
+        <li><a href="#boomv3-sonicboomhttpsgithubcomriscv-boomriscv-boom">BOOMv3 (SonicBOOM)<a href="https://github.com/riscv-boom/riscv-boom">*</a></a>
+          <ul>
+            <li><a href="#pipeline-1">Pipeline</a></li>
+          </ul>
+        </li>
+        <li><a href="#ariane-cva6httpsgithubcomopenhwgroupcva6">Ariane (CVA6)<a href="https://github.com/openhwgroup/cva6">*</a></a>
+          <ul>
+            <li><a href="#pipeline-2">Pipeline</a></li>
+          </ul>
+        </li>
+        <li><a href="#shakti-classe-chttpsshaktiorgin">Shakti Classe C<a href="https://shakti.org.in/">*</a></a>
+          <ul>
+            <li><a href="#pipeline-3">Pipeline</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#comparação">Comparação</a></li>
+    <li><a href="#conclusão">Conclusão</a></li>
+    <li><a href="#referências">Referências</a></li>
+    <li><a href="#glossário">Glossário</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Este artigo busca realizar uma comparação entre as principais implementações
+de RISCV, são eles os chips: Rocket, BOOM, Ariane (CVA6) e SHAKTI Classe C.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="riscv-logo.png"
+        data-srcset="/comparative-riscv/riscv-logo.png, riscv-logo.png 1.5x, /comparative-riscv/riscv-logo.png 2x"
+        data-sizes="auto"
+        alt="/comparative-riscv/riscv-logo.png"
+        title="Logo of riscv" /></p>
+<h2 id="introdução">Introdução</h2>
+<p>RISC-V é uma nova arquitetura de conjunto de instruções
+(ISA) que foi criada na Universidade da Califórnia em Berkeley
+como um projeto de pesquisa e educação em arquitetura
+de computadores, atualmente vem ganhando cada vez
+mais implementações por parte da indústria. Ela foi desenvolvida
+com o objetivo de ser aberta, livre e acessível,
+de forma a permitir que qualquer pessoa possa usar, modificar
+e implementar a arquitetura sem restrições ou custos
+adicionais. A ISA foi projetada para suportar espaços de endereçamento
+de 32 bits, 64 bits e 128 bits, visando aumentar a
+sua adoção.</p>
+<p>Essa flexibilidade permite que a arquitetura RISCV
+seja utilizada em uma ampla variedade de aplicações, desde
+dispositivos de baixo consumo de energia até sistemas de alto
+desempenho. Ao suportar diferentes tamanhos de palavra,
+a ISA RISC-V oferece maior versatilidade para atender às
+necessidades específicas de cada projeto, permitindo um uso
+eficiente dos recursos disponíveis. Essa abordagem modular
+contribui para a popularidade e a crescente aceitação da
+arquitetura RISC-V em diversas indústrias e setores.</p>
+<p>RISC-V é uma arquitetura que permite que qualquer pessoa
+ou organização crie suas próprias implementações. Devido
+a esse fato, este artigo tem como objetivo apresentar e
+comparar as principais implementações.
+Ele possui 3 sessões, primeiro será apresentado as implementações,
+seguido pela comparação, e por fim, a conclusão.</p>
+<h2 id="implementações">Implementações</h2>
+<p>Para a escolha das implementações a serem apresentadas,
+foram pesquisadas implementações robustas e avançadas, que fossem
+capazes de executar um SO (Sistema Operacional) em uma placa FPGA.
+Para este cenário foram escolhidas:
+Ariane (CVA6)[4], Boomv3[5], Rocket[1] e Shakti Classe C[2].</p>
+<h3 id="rocket-chiphttpsgithubcomchipsalliancerocket-chip">Rocket Chip<a href="https://github.com/chipsalliance/rocket-chip" target="_blank" rel="noopener noreffer">*</a></h3>
+<p>O Rocket Chip é um projeto de desenvolvimento de processador que
+foi criado na Universidade da Califórnia, em Berkeley.
+Ele desempenha um papel importante como uma implementação inicial
+e serve a várias finalidades dentro do campo de computação.
+O principal objetivo do Rocket Chip é atuar como uma espécie de
+modelo de referência para processadores baseados no conjunto de instruções RISC-V (ISA).
+O Rocket Chip é uma criação importante que desempenha várias funções:
+é uma referência para processadores RISC-V, uma biblioteca de código aberto e
+uma plataforma de testes para novas ideias e desenvolvimentos relacionados a processadores.</p>
+<p>Ele é um processador escalar em ordem com um pipeline de 5 estágios,
+ou seja, é um tipo de unidade de processamento central em um computador.
+<em>Escalar</em> se refere a executar uma instrução por vez,
+e <em>ordem de 5 estágios</em> se refere aos passos que o processador segue
+para executar cada instrução.
+Esses passos são divididos em cinco etapas distintas:
+busca (pegar a próxima instrução), decodificação (entender o que a
+instrução faz), execução (realizar a operação da instrução),
+acesso à memória (lidar com informações armazenadas)
+e escrita de volta (atualizar os resultados).</p>
+<h4 id="pipeline">Pipeline</h4>
+<p><figure><a class="lightgallery" href="/comparative-riscv/rocket.png" title="Pipeline do Rocket Chip" data-thumbnail="/comparative-riscv/rocket.png" data-sub-html="<h2>Pipeline do Rocket Chip</h2><p>Pipeline do Rocket Chip</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="rocket.png"
+            data-srcset="/comparative-riscv/rocket.png, rocket.png 1.5x, /comparative-riscv/rocket.png 2x"
+            data-sizes="auto"
+            alt="/comparative-riscv/rocket.png" />
+    </a><figcaption class="image-caption">Pipeline do Rocket Chip</figcaption>
+    </figure></p>
+<p>Possui um pipeline clássico de 5 estágios,
+como já descritos anteriormente.
+Inclui uma área de armazenamento temporário (cache) para
+dados e instruções, que pode ser rápida ou mais devagar.
+As caches do tipo L1 e L2 podem ser ajustadas conforme a necessidade.
+Para adivinhar para onde um ramo (um tipo de decisão) deve ir,
+ele usa um conjunto de recursos configuráveis,
+como uma <em>máquina de prever o futuro</em>,
+incluindo um Buffer de Destino de Ramificação (BTB),
+uma Tabela de Histórico de Ramificação(BHT)
+e uma lista de lugares aonde ele pode voltar depois de tomar uma decisão (RAS).
+Além disso, há uma parte chamada Buffer de Pesquisa de Tradução (TLB),
+que ajuda a traduzir códigos e dados em informações que o processador
+possa entender mais rapidamente,
+o que ajuda a fazer o computador funcionar mais rápido em geral.</p>
+<h3 id="boomv3-sonicboomhttpsgithubcomriscv-boomriscv-boom">BOOMv3 (SonicBOOM)<a href="https://github.com/riscv-boom/riscv-boom" target="_blank" rel="noopener noreffer">*</a></h3>
+<p>O BOOMv3, também conhecido como SonicBOOM, é um projeto de processador
+desenvolvido pela Universidade da Califórnia em Berkeley.
+Ele é projetado para ser superescalar fora de ordem,
+o que significa que pode executar várias instruções em paralelo,
+independentemente da ordem em que foram escritas no programa.
+Isso geralmente resulta em um alto desempenho,
+pois permite que o processador aproveite melhor os recursos disponíveis.</p>
+<p>O pipeline do BOOMv3 tem 10 estágios, o que significa que as instruções
+percorrem uma série de etapas separadas enquanto são processadas.
+Isso ajuda a dividir o trabalho em partes menores e
+a aumentar a eficiência do processador. No entanto,
+quando ocorre um erro de previsão de ramificação (<em>misprediction</em>),
+há uma penalidade de 12 ciclos, o que significa que o processador
+pode precisar de um tempo extra para se recuperar de um erro.</p>
+<p>O projeto BOOMv3 é considerado ambicioso, pois é destinado à
+computação de alto desempenho.
+Ele é especialmente adequado para uso em clusters de computadores e servidores,
+onde o poder de processamento é crítico.
+Clusters são conjuntos de computadores interconectados que
+trabalham juntos para lidar com tarefas complexas,
+e os servidores são computadores dedicados a fornecer serviços,
+como hospedagem de sites ou armazenamento de dados.
+Portanto, o BOOMv3 é otimizado para lidar com cargas de trabalho intensivas
+e é uma escolha popular para cenários em que o desempenho é primordial.</p>
+<h4 id="pipeline-1">Pipeline</h4>
+<p><figure><a class="lightgallery" href="/comparative-riscv/boom.png" title="Pipeline do BOOM" data-thumbnail="/comparative-riscv/boom.png" data-sub-html="<h2>Pipeline do BOOM</h2><p>Pipeline do BOOM</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="boom.png"
+            data-srcset="/comparative-riscv/boom.png, boom.png 1.5x, /comparative-riscv/boom.png 2x"
+            data-sizes="auto"
+            alt="/comparative-riscv/boom.png" />
+    </a><figcaption class="image-caption">Pipeline do BOOM</figcaption>
+    </figure></p>
+<p>O BOOM apresenta um pipeline que pode ser descrito como complexo e robusto.
+Isso significa que ele é capaz de gerenciar tarefas variadas
+e desafiantes de forma eficaz.
+O BOOM também é configurável e personalizável,
+o que permite que os desenvolvedores adaptem o processador de acordo
+com as necessidades específicas de suas aplicações.</p>
+<p>Um detalhe importante é o TLB (Buffer de Pesquisa de Tradução),
+que ajuda a traduzir os códigos e instruções em informações que o
+processador possa entender mais rapidamente, melhorando o desempenho geral.
+Outra característica notável do BOOM é a maneira como lida com
+previsões de ramificação (decisões sobre qual caminho um programa seguirá).
+Ele utiliza preditores complexos de dois níveis baseados em
+vetores de histórico global, conhecidos como GShare ou TAGE.
+Esses preditores são uma espécie de <em>máquina de adivinhar</em> que ajuda
+o processador a antecipar decisões de ramificação, melhorando a eficiência.</p>
+<p>O BOOM também oferece suporte à especulação completa de ramificação.
+Isso significa que ele pode tomar decisões arriscadas sobre caminhos a seguir
+e corrigir caso essas decisões estejam erradas.
+Isso é feito usando um conjunto de recursos que inclui o
+BTB (Buffer de Destino de Ramificação),
+a BHT (Tabela de Histórico de Ramificação), o TLB
+e o RAS (Pilha de Endereços de Retorno).</p>
+<p>Além disso, existe uma parte chamada
+uBTB (Buffer de Destino de Ramificação Simplificado),
+também conhecida como <em>next-line-predictor</em> ou <em>L0 BTB</em>.
+Isso funciona como um atalho para pequenos loops, redirecionando o
+próximo endereço de instrução de forma mais rápida,
+o que melhora muito a velocidade de execução em situações específicas.</p>
+<h3 id="ariane-cva6httpsgithubcomopenhwgroupcva6">Ariane (CVA6)<a href="https://github.com/openhwgroup/cva6" target="_blank" rel="noopener noreffer">*</a></h3>
+<p>O CVA6 é uma implementação de processador desenvolvida pelo grupo HW,
+que é uma organização global dedicada à criação de hardwares de
+código aberto e livres.
+Isso significa que o projeto do CVA6 é acessível a todos,
+permitindo que as pessoas o estudem, modifiquem e usem conforme necessário.</p>
+<p>Ele é um processador superescalar fora de ordem,
+o que significa que ele pode executar múltiplas instruções ao mesmo tempo
+e não necessariamente na ordem em que foram escritas no programa.
+Ele possui um pipeline de 6 estágios e pode ser comparado ao pipeline do
+Rocket Chip, que tem 5 estágios, mas com um estágio adicional para
+o Program Counter (PC).
+O Program Counter é um registrador especial que armazena o endereço da
+próxima instrução a ser executada.
+No caso do CVA6, esse processo é tratado como uma fase separada no pipeline,
+o que pode trazer vantagens em termos de eficiência e desempenho.
+Essa abordagem de incorporar o processo do PC como uma fase do pipeline
+é uma característica distintiva do CVA6, que pode influenciar
+positivamente o desempenho geral do processador em certos cenários de uso.</p>
+<h4 id="pipeline-2">Pipeline</h4>
+<p><figure><a class="lightgallery" href="/comparative-riscv/ariane.png" title="Pipeline do Ariane - CVA6" data-thumbnail="/comparative-riscv/ariane.png" data-sub-html="<h2>Pipeline do Ariane - CVA6</h2><p>Pipeline do Ariane - CVA6</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="ariane.png"
+            data-srcset="/comparative-riscv/ariane.png, ariane.png 1.5x, /comparative-riscv/ariane.png 2x"
+            data-sizes="auto"
+            alt="/comparative-riscv/ariane.png" />
+    </a><figcaption class="image-caption">Pipeline do Ariane - CVA6</figcaption>
+    </figure></p>
+<p>O Ariane (CVA6) é ajustável conforme a demanda e equipado com componentes
+especializados para aprimorar diversas tarefas-chave.
+Uma das suas partes distintivas é o PTW (Caminhador da Tabela de Páginas),
+que desempenha o papel de um tradutor inteligente.
+Quando um endereço não é localizado na TLB (Buffer de Tradução de Endereço),
+o PTW entra em ação.
+Funciona como um guia versátil que consulta a memória principal,
+realizando a tradução do endereço virtual para o físico e, posteriormente,
+adiciona a entrada correspondente na TLB.
+A sua atuação é crucial para agilizar o processo de acesso à memória,
+otimizando a eficiência da busca de informações.</p>
+<p>Outro aspecto notável é a capacidade de previsão de ramificações.
+Esse mecanismo de previsão é respaldado por um conjunto de recursos,
+incluindo o BTB (Buffer de Destino de Ramificação),
+que atua como um direcionador de possíveis escolhas.
+Além disso, a BHT (Tabela de Histórico de Ramificação)
+é como um diário que registra padrões anteriores de decisões,
+contribuindo para uma abordagem mais precisa.
+Complementando essa funcionalidade, o TLB e o RAS (Pilha de Endereços de Retorno)
+também desempenham papéis fundamentais na preparação para eventos futuros,
+possibilitando um processamento mais eficiente e previsível.</p>
+<h3 id="shakti-classe-chttpsshaktiorgin">Shakti Classe C<a href="https://shakti.org.in/" target="_blank" rel="noopener noreffer">*</a></h3>
+<p>O SHAKTI é um projeto de código aberto iniciado pelo
+Instituto Indiano de Tecnologia de Madras.
+Ele tem como objetivo criar processadores avançados que possam
+ser acessíveis e personalizáveis para diversas aplicações.
+O Classe C é um dos membros da família de processadores SHAKTI.
+Essa família de processadores visa oferecer opções variadas
+para diferentes necessidades.
+O processador Classe C é um exemplo notável dessa família.
+Ele é do tipo <em>escalar em ordem</em> e possui um pipeline de 5 estágios.</p>
+<p>O que o torna ainda mais especial é que ele é o membro mais avançado
+da linha de processadores SHAKTI.
+Isso significa que ele incorpora os aprimoramentos
+e as características mais recentes desenvolvidas pela equipe do projeto.
+Ele representa o ápice da evolução dessa linha de processadores,
+garantindo um desempenho aprimorado e recursos mais sofisticados.</p>
+<blockquote>
+<p>Por convenção, a partir desse ponto, será utilizado apenas o termo
+Shakti para se referir ao chipset Classe C da família de processadores Shakti.</p>
+</blockquote>
+<h4 id="pipeline-3">Pipeline</h4>
+<p><figure><a class="lightgallery" href="/comparative-riscv/shakti.png" title="Pipeline do Shakti Classe C" data-thumbnail="/comparative-riscv/shakti.png" data-sub-html="<h2>Pipeline do Shakti Classe C</h2><p>Pipeline do Shakti Classe C</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="shakti.png"
+            data-srcset="/comparative-riscv/shakti.png, shakti.png 1.5x, /comparative-riscv/shakti.png 2x"
+            data-sizes="auto"
+            alt="/comparative-riscv/shakti.png" />
+    </a><figcaption class="image-caption">Pipeline do Shakti Classe C</figcaption>
+    </figure></p>
+<p>Com base nas implementações mencionadas anteriormente,
+este processador apresenta as características mais essenciais e fundamentais.
+Seu pipeline adota uma abordagem simples de 5 estágios,
+com estruturas clássicas aplicadas para otimizar o processamento.
+No âmbito da previsão de desvios, ele se beneficia das funcionalidades do
+BTB, BHT e RAS, ferramentas que colaboram para antecipar
+escolhas de ramificação e otimizar a execução.</p>
+<p>Uma particularidade notável é que este processador possui caches L1 separados,
+que funcionam como áreas de armazenamento temporário para dados frequentemente utilizados,
+contribuindo para um acesso mais ágil e eficaz.
+Além disso, suas TLBs associativas separadas desempenham o papel de
+traduzir endereços virtuais em endereços físicos de memória,
+otimizando ainda mais o desempenho global.
+Este processador se destaca por sua simplicidade em comparação com as
+implementações anteriores, tornando-o mais direto em suas operações.
+Ele é considerado o mais elementar entre os processadores mencionados previamente.
+A flexibilidade também é uma característica fundamental,
+pois pode ser configurado e adaptado conforme as necessidades,
+permitindo ajustes específicos de acordo com diferentes cenários.</p>
+<h2 id="comparação">Comparação</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Rocket</th>
+<th style="text-align:center">BOOMv3</th>
+<th style="text-align:center">Ariane</th>
+<th style="text-align:center">Shakti</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bits</td>
+<td style="text-align:center">32/64</td>
+<td style="text-align:center">64</td>
+<td style="text-align:center">64</td>
+<td style="text-align:center">32/64</td>
+</tr>
+<tr>
+<td>Stages</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10/12</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>Funct. Units</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>DMIPS</td>
+<td style="text-align:center">1,71 MHz</td>
+<td style="text-align:center">3,87 MHz</td>
+<td style="text-align:center">1,21 MHz</td>
+<td style="text-align:center">1,70 MHz</td>
+</tr>
+<tr>
+<td>Tech</td>
+<td style="text-align:center">45nm</td>
+<td style="text-align:center">45nm</td>
+<td style="text-align:center">22 nm</td>
+<td style="text-align:center">22 nm</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td style="text-align:center">1,6 GHz</td>
+<td style="text-align:center">1,5 GHz</td>
+<td style="text-align:center">1,7 GHz</td>
+<td style="text-align:center">0,8 GHz</td>
+</tr>
+<tr>
+<td>Area</td>
+<td style="text-align:center">0,5 mm²</td>
+<td style="text-align:center">1,7 mm²</td>
+<td style="text-align:center">0,3 mm²</td>
+<td style="text-align:center">0,29 mm²</td>
+</tr>
+<tr>
+<td>Power</td>
+<td style="text-align:center">125 mW</td>
+<td style="text-align:center">300 mW</td>
+<td style="text-align:center">52 mW</td>
+<td style="text-align:center">90 mW</td>
+</tr>
+</tbody>
+</table>
+<p>Inicialmente, podemos observar as características comuns entre eles.
+Ambos possuem suporte para arquitetura de 64 bits.
+Além disso, implementam versões próximas do pipeline clássico de 5 estágios
+e incorporam predição de branch em suas implementações,
+utilizando recursos como BTB, BHT e RAS. Além disso, são configuráveis,
+e suas caches são acompanhadas por TLBs.</p>
+<p>Utilizando como parâmetro a quantidade de DMIPS/MHz relatada,
+a literatura considera que o BOOMv3 lidera o critério de desempenho
+por MHz e ultrapassa todos os outros em mais de um fator de 2.
+É importante observar que isso não necessariamente significa que
+ele é o processador mais rápido,
+mas sim que ele realiza mais instruções por ciclo de clock.
+Na sequência, os processadores Rocket, SHAKTI e CVA6 seguem a ordem mencionada.
+Estes últimos conseguem alcançar valores semelhantes, com exceção do Ariane.
+De acordo com a referência do chipset, o Ariane alcança uma taxa de 1,70 GHz,
+enquanto a literatura indica que a sua taxa real é de 1,21 GHz,
+o que o coloca em desvantagem em relação aos seus concorrentes.
+Dessa forma, o Ariane possui a menor taxa entre os modelos comparados.</p>
+<p>O BOOMv3 também se destaca como a implementação mais complexa,
+com uma área de silício maior e maior consumo de energia.
+Isso é resultado de sua estrutura superescalar,
+paralelismo e capacidade de execução.
+No entanto, é importante notar que quatro núcleos do Rocket poderiam
+caber em um único núcleo do BOOMv3, o que se aplica também a outras implementações.
+Dependendo do projeto, vários núcleos de baixo consumo podem ser
+mais vantajosos do que um núcleo altamente eficiente.</p>
+<p>A tecnologia do chip pode ser usada para justificar a área
+e o consumo desses processadores.
+O Rocket e o BOOMv3 são fabricados em 45 nm, enquanto o Ariane
+e o Shakti utilizam 22 nm. Essa escolha de tecnologia tem um impacto
+direto no consumo de energia e na área ocupada pelo chip.
+Quanto menor o valor, menor a energia necessária e maior a eficiência
+de espaço dentro do chip.
+Com tecnologias mais avançadas, os chips podem ser reduzidos em tamanho.</p>
+<p>Outro ponto interessante é que o Ariane e o Shakti conseguem ser
+menores e consomem menos da metade da energia do Rocket,
+o que os torna ideais para projetos com requisitos mínimos de consumo.
+Dessa forma, eles são implementações compactas e eficientes.
+O Ariane também se destaca em termos de eficiência e desempenho.</p>
+<p>Além disso, é importante observar que, com exceção do Shakti,
+todas as implementações apresentam velocidades de processamento próximas.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Todas as implementações têm suas vantagens e desvantagens,
+atendendo a públicos diversos com necessidades específicas.</p>
+<p>A implementação Rocket se destaca pelo pioneirismo, simplicidade e
+eficiência.
+Sendo a primeira implementação, ela serve como depurador da ISA,
+moldando e referenciando o surgimento de novas placas.
+Além disso, é a queridinha das publicações acadêmicas.</p>
+<p>BOOMv3 se destaca por ser a implementação mais robusta e eficiente,
+voltada para computação de alto desempenho e suas demandas.</p>
+<p>Ariane, por sua vez, se destaca pelo tamanho compacto e eficiência energética.
+Foi projetada para atender a requisitos de desenvolvimento mais limitados.</p>
+<p>Por fim, o núcleo Shakti é projetado para sistemas de computação
+de médio porte e possui características adequadas para essa finalidade.
+Sua abordagem é simples e eficiente.</p>
+<h2 id="referências">Referências</h2>
+<p>[1] Krste Asanović et al.2016.The Rocket Chip Generator. TechnicalReport UCB/EECS-2016-17. Department of Electrical Engineering &amp;Computer Sciences, University of California, Berkeley, CA, USA.</p>
+<p>[2] Gurajala Bhavitha Chowdary. 2022.Set Associative Data TLB for ShaktiC-Class Processor. Ph. D. Dissertation. Indian Institute of TechnologyMadras.</p>
+<p>[3] Alexander Dörflinger, Mark Albers, Benedikt Kleinbeck, Yejun Guan,Harald Michalik, Raphael Klink, Christopher Blochwitz, Anouar Nechi,and Mladen Berekovic. 2021.  A comparative survey of open-sourceapplication-class RISC-V processor implementations. InProceedings ofthe 18th ACM International Conference on Computing Frontiers. ACM. <a href="https://doi.org/10.1145/3457388.3458657" target="_blank" rel="noopener noreffer">https://doi.org/10.1145/3457388.3458657</a></p>
+<p>[4] Florian Zaruba and Luca Benini. 2019. The Cost of Application-ClassProcessing: Energy and Performance Analysis of a Linux-Ready 1.7-GHz 64-Bit RISC-V Core in 22-nm FDSOI Technology.IEEE Transac-tions on Very Large Scale Integration (VLSI) Systems27, 11 (nov 2019),2629–2640. <a href="https://doi.org/10.1109/tvlsi.2019.2926114" target="_blank" rel="noopener noreffer">https://doi.org/10.1109/tvlsi.2019.2926114</a></p>
+<p>[5] Jerry Zhao, Ben Korpan, Abraham Gonzalez, and Krste Asanovic. 2020.SonicBOOM: The 3rd Generation Berkeley Out-of-Order Machine.Fourth Workshop on Computer Architecture Research with RISC-V(May2020).</p>
+<h2 id="glossário">Glossário</h2>
+<ul>
+<li><strong>Buffer de destino de ramificação (BTB)</strong>: Prevê o possível endereço de destino para instruções de ramificação com base em padrões anteriores.</li>
+<li><strong>Buffer de pesquisa de tradução (TLB)</strong>: É uma pequena memória associativa que armazena traduções de endereços virtuais para endereços físicos.</li>
+<li><strong>Cache</strong>: É uma área de armazenamento rápido que é usada para armazenar cópias de dados que são acessados com frequência.</li>
+<li><strong>Caminhador da tabela de páginas (PTW)</strong>: É um componente da unidade de gerenciamento de memória (MMU) de um processador. O PTW é responsável por traduzir endereços virtuais em endereços físicos.</li>
+<li><strong>Pilha de endereços de retorno (RAS)</strong>: É usado para rastrear o fluxo de execução do programa, e assegurar que o fluxo de execução retorne adequadamente para a instrução que fez a chamada.</li>
+<li><strong>Tabela de histórico de ramificação (BHT)</strong>: Armazena padrões de histórico de decisões de ramificação e ajuda a prever a probabilidade de uma instrução de ramificação ser tomada ou não tomada.</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Atualizado em 2023-08-18&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/e4de1d2942eb5bf5f5b477b575ee5f332c076c03" target="_blank" title="commit by Junior Santos(claudio.dossantosjunior@yahoo.com.br) e4de1d2942eb5bf5f5b477b575ee5f332c076c03: Finished post about comparative riscv">
+                                    <i class="fas fa-hashtag fa-fw"></i>e4de1d2</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/comparative-riscv/index.md" target="_blank">Leia em Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Compartilhe em Twitter" data-sharer="twitter" data-url="https://jr-santos98.github.io/comparative-riscv/" data-title="Um comparativo entre implementações de RISC-V" data-hashtags="RISCV,Implementação,Comparação"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Compartilhe em Facebook" data-sharer="facebook" data-url="https://jr-santos98.github.io/comparative-riscv/" data-hashtag="RISCV"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Compartilhe em Linkedin" data-sharer="linkedin" data-url="https://jr-santos98.github.io/comparative-riscv/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Compartilhe em WhatsApp" data-sharer="whatsapp" data-url="https://jr-santos98.github.io/comparative-riscv/" data-title="Um comparativo entre implementações de RISC-V" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Compartilhe em Reddit" data-sharer="reddit" data-url="https://jr-santos98.github.io/comparative-riscv/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/riscv/">RISCV</a>,&nbsp;<a href="/tags/implementa%C3%A7%C3%A3o/">Implementação</a>,&nbsp;<a href="/tags/compara%C3%A7%C3%A3o/">Comparação</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Voltar</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/review-power-architecture/" class="prev" rel="prev" title="IBM Power Systems - Power8, Power9 and Power10"><i class="fas fa-angle-left fa-fw"></i>IBM Power Systems - Power8, Power9 and Power10</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Possibilitado por <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Tema - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jr-santos98.github.io/" target="_blank">Junior Santos</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Voltar ao topo">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="Ver comentários">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copiar para a área de transferência","maxShownLines":10},"comment":{"valine":{"appId":"c1PRSknpuu6SngDIkae9hdyx-MdYXbMMI","appKey":"gnb7H7gS8b0UjAJuqJfJMRoW","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"O seu comentário ...","recordIP":true,"serverURLs":"https://c1prsknp.api.lncldglobal.com","visitor":true}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.pt-br","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"Nenhum resultado encontrado","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

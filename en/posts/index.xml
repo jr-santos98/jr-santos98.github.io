@@ -4,7 +4,15 @@
         <link>https://jr-santos98.github.io/en/posts/</link>
         <description>All Posts | Junior Santos</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
-            <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jr-santos98.github.io/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jr-santos98.github.io/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>A comparison between RISC-V implementations</title>
+    <link>https://jr-santos98.github.io/en/comparative-riscv/</link>
+    <pubDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jr-santos98.github.io/en/comparative-riscv/</guid>
+    <description><![CDATA[<p>This article seeks to perform a comparison among the main implementations of RISC-V,
+which are the chips: Rocket, BOOM, Ariane (CVA6), and SHAKTI C-Class.</p>]]></description>
+</item><item>
     <title>IBM Power Systems - Power8, Power9 and Power10</title>
     <link>https://jr-santos98.github.io/en/review-power-architecture/</link>
     <pubDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</pubDate>

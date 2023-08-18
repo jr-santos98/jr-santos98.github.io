@@ -5,7 +5,9 @@ Este post faz uma revisão sobre os processadores que compoêm o IBM Power Syste
 
 <!--more-->
 
-# Instrodução
+![Logo - Power systems](blog-architecture-power.png)
+
+## Instrodução
 
 Em uma comparação entre os processadores da IBM (arquitetura Power) e os da Intel/AMD (arquitetura x86),
 pode-se afirmar que a melhor opções entre eles, dependerá do seu uso.
