@@ -1,15 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tutorials - Category - Junior Santos</title>
-        <link>https://jr-santos98.github.io/en/categories/tutorials/</link>
-        <description>Tutorials - Category - Junior Santos</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
-            <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 15 Dec 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jr-santos98.github.io/en/categories/tutorials/" rel="self" type="application/rss+xml" /><item>
-    <title>Hello Minikube for ppc64le</title>
-    <link>https://jr-santos98.github.io/en/hello-minikube/</link>
-    <pubDate>Wed, 15 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://jr-santos98.github.io/en/hello-minikube/</guid>
-    <description><![CDATA[<p>This tutorial shows you how to create a cluster for processors of the Power architecture (ppc64/ppc64le) using Minikube.</p>]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on Junior Santos</title>
+    <link>https://jr-santos98.github.io/en/categories/tutorials/</link>
+    <description>Recent content in Tutorials on Junior Santos</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
+    <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 08 Sep 2025 23:28:44 -0300</lastBuildDate>
+    <atom:link href="https://jr-santos98.github.io/en/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello Minikube for ppc64le</title>
+      <link>https://jr-santos98.github.io/en/hello-minikube/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/en/hello-minikube/</guid>
+      <description>&lt;p&gt;This tutorial shows you how to create a cluster for processors of the Power architecture (ppc64/ppc64le) using Minikube.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

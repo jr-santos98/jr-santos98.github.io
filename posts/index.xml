@@ -8,23 +8,26 @@
     <title>Um comparativo entre implementações de RISC-V</title>
     <link>https://jr-santos98.github.io/comparative-riscv/</link>
     <pubDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
+    <author>Junior Santos</author>
     <guid>https://jr-santos98.github.io/comparative-riscv/</guid>
     <description><![CDATA[<p>Este artigo busca realizar uma comparação entre as principais implementações
 de RISCV, são eles os chips: Rocket, BOOM, Ariane (CVA6) e SHAKTI Classe C.</p>]]></description>
-</item><item>
+</item>
+<item>
     <title>IBM Power Systems - Power8, Power9 and Power10</title>
     <link>https://jr-santos98.github.io/review-power-architecture/</link>
     <pubDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
+    <author>Junior Santos</author>
     <guid>https://jr-santos98.github.io/review-power-architecture/</guid>
     <description><![CDATA[<p>Este post faz uma revisão sobre os processadores que compoêm o IBM Power Systems.</p>]]></description>
-</item><item>
+</item>
+<item>
     <title>Hello Minikube para ppc64le</title>
     <link>https://jr-santos98.github.io/hello-minikube/</link>
     <pubDate>Wed, 15 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
+    <author>Junior Santos</author>
     <guid>https://jr-santos98.github.io/hello-minikube/</guid>
     <description><![CDATA[<p>Este tutorial mostra como criar um cluster para processadores da arquitetura Power (ppc64/ppc64le) utilizando o Minikube.</p>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

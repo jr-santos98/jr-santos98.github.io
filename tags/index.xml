@@ -1,78 +1,85 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tags - Tag - Junior Santos</title>
-        <link>https://jr-santos98.github.io/tags/</link>
-        <description>Tags - Tag - Junior Santos</description>
-        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
-            <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jr-santos98.github.io/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Comparação</title>
-    <link>https://jr-santos98.github.io/tags/compara%C3%A7%C3%A3o/</link>
-    <pubDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/compara%C3%A7%C3%A3o/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Implementação</title>
-    <link>https://jr-santos98.github.io/tags/implementa%C3%A7%C3%A3o/</link>
-    <pubDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/implementa%C3%A7%C3%A3o/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>RISCV</title>
-    <link>https://jr-santos98.github.io/tags/riscv/</link>
-    <pubDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/riscv/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Power Systems</title>
-    <link>https://jr-santos98.github.io/tags/power-systems/</link>
-    <pubDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/power-systems/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Power10</title>
-    <link>https://jr-santos98.github.io/tags/power10/</link>
-    <pubDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/power10/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Power8</title>
-    <link>https://jr-santos98.github.io/tags/power8/</link>
-    <pubDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/power8/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Power9</title>
-    <link>https://jr-santos98.github.io/tags/power9/</link>
-    <pubDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/power9/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Kubernetes</title>
-    <link>https://jr-santos98.github.io/tags/kubernetes/</link>
-    <pubDate>Wed, 15 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/kubernetes/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Minikube</title>
-    <link>https://jr-santos98.github.io/tags/minikube/</link>
-    <pubDate>Wed, 15 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/minikube/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Tutorial</title>
-    <link>https://jr-santos98.github.io/tags/tutorial/</link>
-    <pubDate>Wed, 15 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>Autor</author>
-    <guid>https://jr-santos98.github.io/tags/tutorial/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Junior Santos</title>
+    <link>https://jr-santos98.github.io/tags/</link>
+    <description>Recent content in Tags on Junior Santos</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
+    <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 08 Sep 2025 23:28:44 -0300</lastBuildDate>
+    <atom:link href="https://jr-santos98.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comparação</title>
+      <link>https://jr-santos98.github.io/tags/compara%C3%A7%C3%A3o/</link>
+      <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/compara%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implementação</title>
+      <link>https://jr-santos98.github.io/tags/implementa%C3%A7%C3%A3o/</link>
+      <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/implementa%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RISCV</title>
+      <link>https://jr-santos98.github.io/tags/riscv/</link>
+      <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/riscv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Power Systems</title>
+      <link>https://jr-santos98.github.io/tags/power-systems/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/power-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Power10</title>
+      <link>https://jr-santos98.github.io/tags/power10/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/power10/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Power8</title>
+      <link>https://jr-santos98.github.io/tags/power8/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/power8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Power9</title>
+      <link>https://jr-santos98.github.io/tags/power9/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/power9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://jr-santos98.github.io/tags/kubernetes/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Minikube</title>
+      <link>https://jr-santos98.github.io/tags/minikube/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/minikube/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>https://jr-santos98.github.io/tags/tutorial/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/tags/tutorial/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

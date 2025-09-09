@@ -6,7 +6,7 @@ which are the chips: Rocket, BOOM, Ariane (CVA6), and SHAKTI C-Class.
 
 <!--more-->
 
-![RISCV's logo](riscv-logo.png)
+<!-- ![RISCV's logo](riscv-logo.png) -->
 
 ## Introduction
 

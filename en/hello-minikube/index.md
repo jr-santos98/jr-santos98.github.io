@@ -5,7 +5,7 @@ This tutorial shows you how to create a cluster for processors of the Power arch
 
 <!--more-->
 
-![Logo of minikube](hello_minikube.png)
+<!-- ![Logo of minikube](hello_minikube.png) -->
 
 The tutorial was performed on Ubuntu 20.04 LTS (ppc64le), the packages were downloaded using the package repository from [OpenPower Lab @ Unicamp](https://openpower.ic.unicamp.br/project/power-repository/).
 

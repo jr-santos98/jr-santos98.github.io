@@ -4,7 +4,8 @@
 This post reviews the processors that make up IBM Power Systems.
 
 <!--more-->
-![Logo - Power systems](blog-architecture-power.png)
+
+<!-- ![Logo - Power systems](blog-architecture-power.png) -->
 
 ## Introduction
 

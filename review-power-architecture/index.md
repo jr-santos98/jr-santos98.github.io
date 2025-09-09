@@ -5,7 +5,7 @@ Este post faz uma revisão sobre os processadores que compoêm o IBM Power Syste
 
 <!--more-->
 
-![Logo - Power systems](blog-architecture-power.png)
+<!-- ![Logo - Power systems](blog-architecture-power.png) -->
 
 ## Instrodução
 

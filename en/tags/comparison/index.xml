@@ -1,16 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Comparison - Tag - Junior Santos</title>
-        <link>https://jr-santos98.github.io/en/tags/comparison/</link>
-        <description>Comparison - Tag - Junior Santos</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
-            <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jr-santos98.github.io/en/tags/comparison/" rel="self" type="application/rss+xml" /><item>
-    <title>A comparison between RISC-V implementations</title>
-    <link>https://jr-santos98.github.io/en/comparative-riscv/</link>
-    <pubDate>Mon, 26 Jun 2023 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://jr-santos98.github.io/en/comparative-riscv/</guid>
-    <description><![CDATA[<p>This article seeks to perform a comparison among the main implementations of RISC-V,
-which are the chips: Rocket, BOOM, Ariane (CVA6), and SHAKTI C-Class.</p>]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Comparison on Junior Santos</title>
+    <link>https://jr-santos98.github.io/en/tags/comparison/</link>
+    <description>Recent content in Comparison on Junior Santos</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</managingEditor>
+    <webMaster>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 08 Sep 2025 23:28:44 -0300</lastBuildDate>
+    <atom:link href="https://jr-santos98.github.io/en/tags/comparison/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A comparison between RISC-V implementations</title>
+      <link>https://jr-santos98.github.io/en/comparative-riscv/</link>
+      <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate><author>claudio.dossantosjunior@yahoo.com.br (Junior Santos)</author>
+      <guid>https://jr-santos98.github.io/en/comparative-riscv/</guid>
+      <description>&lt;p&gt;This article seeks to perform a comparison among the main implementations of RISC-V,&#xA;which are the chips: Rocket, BOOM, Ariane (CVA6), and SHAKTI C-Class.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>
